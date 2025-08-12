@@ -1,0 +1,437 @@
+:root{
+    --hover-color: rgb(248, 244, 244);
+    --link-color: rgb(0, 0, 0);
+    background-color: #e0e0e0; /* Light neutral background */
+}
+
+*{
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: 'Poppins';
+    background-color: var(--background-color);
+}
+
+a{
+    color: var(--link-color);
+    text-decoration: none;
+}
+
+/* NAVIGATION */
+
+nav{
+    display: flex;
+    font-family: 'Michroma';
+    justify-content: space-between;
+    padding: 0 40px;
+    height: 80px;
+    align-items: center;
+    border-bottom: 1px solid;
+    transform: translateY(20px);
+    opacity: 0;
+    animation: fadeDown 0.8s ease-out forwards;
+    animation-delay: 0.4s;
+}
+
+
+
+nav .left a{
+    font-size: 50px;
+    font-family: 'Qwigley';
+    font-weight: normal;
+    align-items: center;
+    
+}
+
+nav .center a{
+    font-size: 20px;
+    border: 2px solid;
+    border-radius: 4px;
+    margin-right: 2px;
+    display: inline-block;
+    padding: 10px;
+}
+
+nav .right a{
+    font-size: 12px ;
+    font-weight: bold;
+    border: 2px solid;
+    border-radius: 4px;
+    padding: 10px;
+    transition: 0.3s;
+    display: inline-block;
+}
+
+nav .center #github:hover {
+    background-color: #333;
+    color: #fff;
+    border-color: #333 ;
+    transition: 0.3s ease;
+    transform: scale(1.05);
+}
+nav .center #linkedin:hover {
+    background-color: #333;
+    color: #fff;
+    border-color: #333 ;
+    transition: 0.3s ease;
+    transform: scale(1.05);
+}
+nav .right a:hover {
+    background-color: #333;
+    color: #fff;
+    border-color: #333 ;
+    transition: 0.3s ease;
+    transform: scale(1.05);
+}
+
+nav .left a:hover {
+  color: #868686;
+  transform: scale(1.05);
+  transition: all 0.2s ease-in-out;
+}
+
+
+/* HERO SECTION */
+
+#scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 5px;
+  background: black;
+  width: 0%;
+  z-index: 9999;
+  transition: width 0.1s ease-out;
+}
+
+
+
+.hero-section {
+    font-family: "Poppins", sans-serif;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 50px;
+    margin: 50px 0;
+    align-items: center;
+    gap: 40px;
+    margin: 20px;
+}
+
+
+.hero-section .text {
+    flex: 5;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 1s ease-out forwards;
+    animation-delay: 0.4s;
+}
+
+.hero-section .headshot {
+    flex: 2;
+    display: flex;
+    justify-content: right;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 1s ease-out forwards;
+    animation-delay: 1s;
+}
+
+
+.hero-section .headshot img {
+    border-radius: 50%;
+    width: 300px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+}
+
+.hero-section .text h2 {
+    font-size: 45px;
+}
+
+.hero-section .text .work {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 145px;
+    padding: 10px 0px;
+    gap: 10px;
+    margin: 10px;
+    border: 1.5px solid rgb(0, 0, 0);
+    border-radius: 8px;
+}
+
+.hero-section .text .span{
+    font-size: 70px;
+}
+
+.hero-section .text .work:hover {
+    background-color: #aeacac;
+    color: #fff;
+    border-color: #0f0e0e ;
+    transition: 0.3s ease;
+    transform: scale(1.05);
+}
+
+.hero-section .headshot img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.section-divider {
+  border-bottom: 1px solid;
+  width: 100%;
+  margin: 60px 0; 
+}
+
+
+
+/* SKILLS SECTION */
+.skills-section {
+    padding: 0 50px;
+    margin-top: 180px;
+    margin-bottom: 300px;
+}
+
+.skills-section h1 {
+  text-align: center;
+  font-size: 35px;  /* Fixed! */
+  position: relative;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.skills-section .text {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.skills-section .cells {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.skills-section .cells .cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    padding: 10px 20px;
+    gap: 10px;
+    margin: 10px;
+    border: 1.5px solid rgb(0, 0, 0);
+    border-radius: 5px;
+    transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.skills-section .cells .cell img {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+    border-radius: 2px;
+}
+
+.skills-section .cells .cell span{
+    font-size: 18px;
+}
+
+.skills-section .cell:hover {
+    background-color: #aeacac;
+    color: #fff;
+    border-color: #0f0e0e ;
+    transition: 0.3s ease;
+    transform: scale(1.05);
+}
+
+/* .skills-section h2::after {
+  content: "";
+  position: absolute;
+  bottom: -5px; 
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: black; 
+  transition: width 0.3s ease;
+} */
+
+/* }
+.skills-section h2:hover::after {
+  width: 100%;
+} */
+
+
+.experience-section {
+    padding: 0 50px;
+    margin-top: 150px;
+    margin-bottom: 100px;
+}
+
+.experience-section .exp-cells .exp-cell {
+   margin-bottom: 50px;
+}
+
+.experience-section h1 {
+  text-align: center;
+  font-size: 35px;  /* Fixed! */
+  position: relative;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.experience-section .section-subtitle{
+    text-align: center;
+    font-size: 1rem;
+    margin-bottom: 40px;
+}
+
+.job-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.job-header-diff {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.job-date-diff {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.job h2 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.job h4 {
+  margin-top: 5px;
+  font-size: 1.2rem;
+  font-style: italic;
+ 
+}
+
+.role-content h4 {
+  margin-top: 5px;
+  font-size: 1.2rem;
+  font-style: italic;
+ 
+}
+
+.timeline-wrapper {
+  border-left: 2px solid black;
+  margin-left: 20px;
+  padding-left: 20px;
+  position: relative;
+}
+
+.timeline-role {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.timeline-dot {
+  width: 10px;
+  height: 10px;
+  background-color: black;
+  border-radius: 50%;
+  margin-left: -25px; /* aligns it with the line */
+  margin-right: 15px;
+  flex-shrink: 0;
+  margin-top: 5px;
+}
+
+.role-content h4 {
+  margin: 0 0 10px;
+}
+
+
+.job ul {
+  margin-top: 10px;
+  padding-left: 20px;
+  list-style-type: disc;
+}
+
+
+.experience-section .exp-cell{
+    border: 1.5px solid rgb(0, 0, 0);
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    margin-bottom: 40px;
+}
+
+
+.exp-cell:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  background-color: rgba(255, 255, 255, 0.05);
+  border-color: rgb(0, 0, 0);
+}
+
+
+.job-header a:hover h2 {
+    border-radius: 5px;
+    color: #868686;
+    transition: 0.3s ease-out;
+    cursor: pointer;
+}
+
+/* Left reveal */
+.reveal-from-left {
+  opacity: 0;
+  transform: translateX(-60px);
+  transition: all 4s ease;
+}
+
+.reveal-from-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Right reveal */
+.reveal-from-right {
+  opacity: 0;
+  transform: translateX(60px);
+  transition: all 4s ease;
+}
+
+.reveal-from-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+
+

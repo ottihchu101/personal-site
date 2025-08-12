@@ -1,0 +1,280 @@
+:root{
+    --hover-color: rgb(248, 244, 244);
+    --link-color: rgb(0, 0, 0);
+    --background-color: #000000e6; 
+}
+
+*{
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: 'Poppins';
+    background-color: var(--background-color);
+}
+
+#scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 5px;
+  background: rgb(255, 255, 255);
+  width: 0%;
+  z-index: 9999;
+  transition: width 0.1s ease-out;
+}
+
+
+a{
+    color: var(--link-color);
+    text-decoration: none;
+}
+
+/* NAVIGATION */
+
+nav{
+    display: flex;
+    font-family: 'Michroma';
+    justify-content: space-between;
+    padding: 0 40px;
+    height: 80px;
+    align-items: center;
+    border-bottom: white solid;
+    transform: translateY(20px);
+    opacity: 0;
+    animation: fadeDown 0.8s ease-out forwards;
+    animation-delay: 2.0s;
+}
+
+
+
+nav .left a{
+    font-size: 50px;
+    font-family: 'Qwigley';
+    font-weight: normal;
+    align-items: center;
+    color: white;
+    
+}
+
+nav .center a{
+    font-size: 20px;
+    border: 2px solid;
+    border-radius: 4px;
+    margin-right: 2px;
+    display: inline-block;
+    padding: 10px;
+    color: white;
+
+}
+
+nav .right a{
+    font-size: 12px ;
+    font-weight: bold;
+    border: 2px solid;
+    border-radius: 4px;
+    padding: 10px;
+    transition: 0.3s;
+    display: inline-block;
+    color: white;
+
+}
+
+nav .center #github:hover {
+    background-color: #cccccc;
+    color: #000000;
+    border-color: #333 ;
+    transition: 0.3s ease;
+    transform: scale(1.05);
+}
+nav .center #linkedin:hover {
+    background-color: #cccccc;
+    color: #000000;
+    border-color: #333 ;
+    transition: 0.3s ease;
+    transform: scale(1.05);
+}
+nav .right a:hover {
+    background-color: #cccccc;
+    color: #000000;
+    border-color: #333 ;
+    transition: 0.3s ease;
+    transform: scale(1.05);
+}
+
+nav .left a:hover {
+    color: #cccccc;
+    transform: scale(1.05);
+    transition: all 0.2s ease-in-out;
+}
+
+/* MAIN */
+
+.opening h1{
+    font-size: 70px;
+    color: white;
+    text-align: center;
+    animation: fadeDown 0.8s ease-out forwards;
+    animation-delay: 0.7s;
+    opacity: 0;
+}
+
+.center-block{
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 50px;
+    color: white;
+    opacity: 0;
+    animation: fadeDown 0.8s ease-out forwards;
+    animation-delay: 2.0s;
+    margin-bottom: 250px;
+}
+
+.center-block span{
+    border: white 1.5px solid;
+    padding: 20px;
+    border-radius: 2px;
+}
+
+
+.center-block h1{
+    font-size: 40px ;
+}
+
+.center-block h4{
+    width: 300px;
+    font-style: italic;
+    margin-bottom: 100px;
+}
+
+.build {
+    border-right: 1.5px solid rgb(255, 255, 255);
+    border-top: 1.5px solid rgb(255, 255, 255);
+    border-radius: 5px;
+    padding: 20px 80px;
+    margin: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    margin-bottom: 40px;
+    height: 400px;
+    width: 600px;
+
+}
+
+.design {
+    border-left: 1.5px solid rgb(255, 255, 255);
+    border-bottom: 1.5px solid rgb(255, 255, 255);
+    border-radius: 5px;
+    padding: 20px 80px;
+    margin: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    margin-bottom: 40px;
+    height: 400px;
+    width: 600px;
+
+}
+
+#build-projects {
+  margin-top: 100px;
+}
+
+#design-projects {
+  margin-top: 100px;
+}
+
+
+.see-work a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.see-work a {
+  color: white;
+  text-decoration: none;
+  border: white 1.5px solid;
+  padding: 20px;
+  border-radius: 2px;
+  display: inline-block;
+  transition: 0.3s ease;
+}
+
+.see-work a:hover {
+    background-color: #cccccc;
+    color: black;
+  transform: scale(1.05);
+}
+
+
+
+/* SECTION-BUILD-PROJECTS */
+
+.section-divider {
+  border-bottom: 1px white solid;
+  width: 100%;
+}
+
+.all-projects{
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    color: white;
+    opacity: 0;
+    animation: fadeDown 0.8s ease-out forwards;
+    animation-delay: 2.5s;
+    margin-bottom: 250px;
+    margin-top: 200px;
+}
+
+
+.all-projects a{
+    border: white 1.5px solid;
+    padding: 5px 25px;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.all-projects h1{
+    font-size: 30px ;
+}
+
+.all-projects h4{
+    font-style: italic;
+}
+
+.project-1 {
+    border: 1.5px solid rgb(255, 255, 255);
+    border-radius: 5px;
+    padding: 30px 50px;
+    margin: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    margin-bottom: 40px;
+    height: auto;
+    width: 600px;
+    opacity: 0;                   
+    transform: translateY(50px);   
+    transition: opacity 0.6s ease, transform 0.6s ease;    
+}
+
+.project-1.visible {
+  opacity: 1;                    
+  transform: translateY(0);      
+}
+
+
+
+
+
+@keyframes fadeDown {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

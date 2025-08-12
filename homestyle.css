@@ -1,0 +1,220 @@
+:root{
+    --hover-color: rgb(248, 244, 244);
+    --link-color: rgb(0, 0, 0);
+    --background-color: #e0e0e0; /* Light neutral background */
+}
+
+*{
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: 'Michroma';
+    background-color: var(--background-color);
+}
+
+a{
+    color: var(--link-color);
+    text-decoration: none;
+}
+
+/* NAVIGATION */
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 40px;
+    height: 80px;
+    align-items: center;
+    border-bottom: 1px solid;
+    transform: translateY(20px);
+    opacity: 0;
+    animation: fadeDown 0.8s ease-out forwards;
+    animation-delay: 0.7s;
+}
+
+
+
+nav .left a{
+    font-size: 50px;
+    font-family: 'Qwigley';
+    font-weight: normal;
+    align-items: center;
+    
+}
+
+nav .center a{
+    font-size: 20px;
+    border: 2px solid;
+    border-radius: 4px;
+    margin-right: 2px;
+    display: inline-block;
+    padding: 10px;
+}
+
+nav .right a{
+    font-size: 12px ;
+    font-weight: bold;
+    border: 2px solid;
+    border-radius: 4px;
+    padding: 10px;
+    transition: 0.3s;
+    display: inline-block;
+}
+
+nav .left a:hover {
+  color: #868686;
+  transform: scale(1.05);
+  transition: all 0.2s ease-in-out;
+}
+
+nav .center #github:hover {
+    background-color: #333;
+    color: #fff;
+    border-color: #333 ;
+    transition: 0.3s ease;
+    transform: scale(1.05);
+}
+nav .center #linkedin:hover {
+    background-color: #333;
+    color: #fff;
+    border-color: #333 ;
+    transition: 0.3s ease;
+    transform: scale(1.05);
+}
+nav .right a:hover {
+    background-color: #333;
+    color: #fff;
+    border-color: #333 ;
+    transition: 0.3s ease;
+    transform: scale(1.05);
+}
+
+/* MAIN */
+
+.middle {    
+  display: flex; /* ADD THIS */
+  justify-content: center; /* center horizontally */
+  align-items: center;     /* center vertically */
+  padding: 0 20px;
+        
+}
+
+
+/* SECTION 2 */
+
+
+
+.middle .name {
+    text-align: center;
+    width: 100%;
+    margin-top: 200px;
+}
+.name h1{
+    font-size: clamp(2rem, 7vw, 10rem); /* responsive size */
+    margin: 0;
+    line-height: 120px;
+    transition: color 0.5s ease;
+}
+
+.middle #last-name{
+  opacity: 0;
+  transition: opacity 1s ease-in ;
+}
+
+
+
+
+.ap{
+    font-size: 20px;
+    margin-top: 120px;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 0 40px;
+    height: 80px;
+    align-items: center;
+}
+
+.ap a{
+    font-size: 20px ;
+    font-weight: bold;
+    border: 2px solid;
+    border-radius: 4px;
+    padding: 0 30px;
+    transition: 0.3s;
+    display: inline-block;
+}
+
+.name h1::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 15px; /* adjust spacing below text */
+  width: 0%;
+  bottom: -5px;
+  height: 3px;
+  background-color: black;
+  transition: width 0.3s ease;
+}
+
+.name h1:hover::after {
+  width: 60%; /* underline width */
+}
+
+/* FADE IN + SLIDE UP ANIMATION */
+
+
+.ap {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.8s ease-out forwards;
+  animation-delay: 0.7s;
+}
+
+.middle {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.8s ease-out forwards;
+  animation-delay: 0.4s;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+.ap a:hover {
+    background-color: #333;
+    color: #fff;
+    border-color: #333 ;
+    transition: 0.3s ease;
+    transform: scale(1.05);
+}
+
+   
+
+
+
+
+
