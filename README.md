@@ -1,7 +1,7 @@
 # Personal Portfolio Website
 
-A responsive personal portfolio website designed in **Figma** and developed using **HTML**, **CSS**, and a bit of **JavaScript**.  
-It serves as a central hub to showcase my projects, skills, and background as a Computer Science student passionate about **front-end development** and **UI/UX design**.
+A responsive personal portfolio website designed in **Figma** and developed using **HTML**, **CSS**, and **JavaScript**.  
+It serves as a central hub to showcase my projects, skills, and background as a Computer Science student passionate about **front-End Design** and **Software Engineering**.
 
 ## 🌟 Features
 - **Responsive Layout** – Optimized for desktop, tablet, and mobile screens.  
