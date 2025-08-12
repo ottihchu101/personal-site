@@ -1,7 +1,7 @@
 # Personal Portfolio Website
 
-A responsive personal portfolio website designed in **Figma** and developed using **HTML**, **CSS**, and **JavaScript**.  
-It serves as a central hub to showcase my projects, skills, and background as a Computer Science student passionate about **Front-End Design** and **Software Engineering**.
+A responsive personal portfolio website designed in **Figma** and developed using **HTML**, **CSS**, and a bit of **JavaScript**.  
+It serves as a central hub to showcase my projects, skills, and background as a Computer Science student passionate about **front-end development** and **UI/UX design**.
 
 ## 🌟 Features
 - **Responsive Layout** – Optimized for desktop, tablet, and mobile screens.  
@@ -15,9 +15,11 @@ It serves as a central hub to showcase my projects, skills, and background as a 
 - **JavaScript** – Interactivity  
 - **Figma** – UI/UX design and prototyping  
 
+## 📷 Preview
+![Website Screenshot](link-to-screenshot.png)
 
 ## 🔗 Live Demo
-[View Website Here](https://www.cottih.dev/)
+[View Website Here](https://yourwebsite.com)
 
 ## 📂 Installation
 If you want to run it locally:

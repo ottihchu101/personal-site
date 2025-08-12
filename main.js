@@ -66,3 +66,17 @@ const ProjectObserver = new IntersectionObserver(entries => {
 revealProjectElements.forEach(el => observer.observe(el));
 
 
+
+// Prevent NaN width when pageHeight is 0 (very short pages on mobile)
+window.addEventListener("load", () => {
+  const bar = document.getElementById("scroll-progress");
+  if (!bar) return;
+  const update = () => {
+    const pageHeight = Math.max(document.body.scrollHeight - window.innerHeight, 1);
+    const scrollTop = window.scrollY;
+    bar.style.width = (scrollTop / pageHeight) * 100 + "%";
+  };
+  update();
+  window.addEventListener("scroll", update);
+  window.addEventListener("resize", update);
+});

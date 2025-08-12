@@ -434,4 +434,66 @@ nav .left a:hover {
 
 
 
+/* ========= About: responsive tweaks ========= */
+@media (max-width: 1100px) {
+  nav { padding: 0 20px; }
+  .hero-section { gap: 24px; padding: 0 24px; }
+  .skills-section, .experience-section { padding: 0 24px; }
+}
+
+@media (max-width: 900px) {
+  .hero-section {
+    flex-direction: column-reverse; /* image above/below text, keeps content intact */
+    align-items: center;
+    text-align: center;
+    margin: 30px 0;
+  }
+  .hero-section .headshot {
+    justify-content: center;
+  }
+  .hero-section .headshot img {
+    width: 220px;
+  }
+  .hero-section .text h2 { font-size: 36px; }
+  .hero-section .text .work { margin: 16px auto; }
+
+  .skills-section { margin-top: 80px; margin-bottom: 160px; }
+  .skills-section .cells .cell {
+    width: 45%;
+    min-width: 220px;
+  }
+
+  .experience-section .exp-cell { padding: 14px; }
+  .timeline-wrapper { margin-left: 12px; padding-left: 16px; }
+}
+
+@media (max-width: 560px) {
+  nav {
+    height: auto;
+    padding: 10px 14px;
+    gap: 8px;
+  }
+  nav .left a { font-size: 36px; }
+  nav .center a, nav .right a { padding: 8px; font-size: 13px; }
+
+  .hero-section .text h2 { font-size: 30px; }
+  .hero-section .text .span { font-size: 48px; }
+
+  .skills-section h1,
+  .experience-section h1 { font-size: 28px; }
+
+  .job-header, .job-header-diff {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+  .job h2 { font-size: 1.25rem; }
+  .job h4, .role-content h4 { font-size: 1.05rem; }
+  .timeline-dot { margin-left: -20px; }
+}
+
+@media (max-width: 380px) {
+  .hero-section .headshot img { width: 180px; }
+  .skills-section .cells .cell { width: 100%; }
+}
 
