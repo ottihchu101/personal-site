@@ -15,11 +15,9 @@ It serves as a central hub to showcase my projects, skills, and background as a 
 - **JavaScript** – Interactivity  
 - **Figma** – UI/UX design and prototyping  
 
-## 📷 Preview
-![Website Screenshot](link-to-screenshot.png)
 
 ## 🔗 Live Demo
-[View Website Here](https://yourwebsite.com)
+[View Website Here](https://www.cottih.dev/)
 
 ## 📂 Installation
 If you want to run it locally:
