@@ -227,7 +227,7 @@ nav .right a:hover {
   nav .center a, nav .right a { padding: 8px; font-size: 14px; }
   nav .left a { font-size: 40px; }
 
-  .middle { padding: 0 12px; }
+  .middle { padding: 0 18px; }
   .middle .name { margin-top: 140px; }
   .name h1 {
     font-size: clamp(2rem, 12vw, 4rem);
