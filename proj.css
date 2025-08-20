@@ -285,7 +285,7 @@ nav .left a:hover {
 @media (max-width: 1200px) {
   nav { padding: 0 20px; }
   .center-block { gap: 24px; }
-  .build, .design { width: 520px; padding: 20px 40px; }
+  .build, .design { width: 500px; padding: 20px 40px; }
   .project-1 { width: 520px; padding: 24px 34px; }
 }
 
