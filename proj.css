@@ -299,7 +299,7 @@ nav .left a:hover {
   }
   .build, .design {
     width: 100%;
-    max-width: 680px;
+    max-width: 600px;
     height: auto;
   }
   .center-block h1 { font-size: 32px; }
@@ -307,7 +307,7 @@ nav .left a:hover {
 
   .all-projects { margin-top: 120px; }
   .project-1 {
-    width: 100%;
+    width: 90%;
     max-width: 680px;
   }
 }
