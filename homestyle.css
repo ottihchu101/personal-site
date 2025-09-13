@@ -127,6 +127,10 @@ nav .right a:hover {
   transition: opacity 1s ease-in ;
 }
 
+.middle .name #last-name{
+  margin-top: 50px;
+}
+
 
 
 
