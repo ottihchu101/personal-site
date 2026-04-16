@@ -1,7 +1,8 @@
 :root{
     --hover-color: rgb(248, 244, 244);
     --link-color: rgb(0, 0, 0);
-    background-color: #e0e0e0; /* Light neutral background */
+    --background-color: #e0e0e0;
+    --accent: #333333;
 }
 
 *{
@@ -39,90 +40,103 @@ nav{
     animation-delay: 0.4s;
 }
 
-
-
 nav .left a{
     font-size: 50px;
     font-family: 'Qwigley';
     font-weight: normal;
     align-items: center;
-    
 }
 
-nav .center a{
-    font-size: 20px;
-    border: 2px solid;
-    border-radius: 4px;
-    margin-right: 2px;
+nav .left a:hover {
+    color: #868686;
+    transition: all 0.2s ease-in-out;
+}
+
+nav .center {
+    display: flex;
+    gap: 28px;
+    align-items: center;
+}
+
+nav .center a {
+    font-size: 12px;
+    font-family: 'Michroma';
+    letter-spacing: 1px;
+    color: #000;
+    padding: 4px 0;
+    border-bottom: 2px solid transparent;
+    transition: color 0.2s, border-color 0.2s;
     display: inline-block;
-    padding: 10px;
 }
 
-nav .right a{
-    font-size: 12px ;
+nav .center a:hover {
+    color: var(--accent);
+}
+
+nav .center a.active {
+    color: var(--accent);
+    border-bottom: 2px solid var(--accent);
+}
+
+nav .right {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+nav .right #github,
+nav .right #linkedin {
+    font-size: 18px;
+    color: #000;
+    transition: color 0.2s;
+}
+
+nav .right #github:hover,
+nav .right #linkedin:hover {
+    color: var(--accent);
+}
+
+nav .right #contact {
+    font-size: 12px;
     font-weight: bold;
-    border: 2px solid;
+    border: 2px solid #000;
     border-radius: 4px;
     padding: 10px;
+    color: #000;
     transition: 0.3s;
     display: inline-block;
 }
 
-nav .center #github:hover {
-    background-color: #333;
+nav .right #contact:hover {
+    background-color: var(--accent);
     color: #fff;
-    border-color: #333 ;
-    transition: 0.3s ease;
-    transform: scale(1.05);
-}
-nav .center #linkedin:hover {
-    background-color: #333;
-    color: #fff;
-    border-color: #333 ;
-    transition: 0.3s ease;
-    transform: scale(1.05);
-}
-nav .right a:hover {
-    background-color: #333;
-    color: #fff;
-    border-color: #333 ;
-    transition: 0.3s ease;
-    transform: scale(1.05);
+    border-color: var(--accent);
 }
 
-nav .left a:hover {
-  color: #868686;
-  transform: scale(1.05);
-  transition: all 0.2s ease-in-out;
-}
-
-
-/* HERO SECTION */
+/* SCROLL PROGRESS */
 
 #scroll-progress {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 5px;
-  background: black;
-  width: 0%;
-  z-index: 9999;
-  transition: width 0.1s ease-out;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    background: var(--accent);
+    width: 0%;
+    z-index: 9999;
+    transition: width 0.1s ease-out;
 }
 
-
+/* HERO SECTION */
 
 .hero-section {
     font-family: "Poppins", sans-serif;
     display: flex;
     justify-content: space-between;
     padding: 0 50px;
-    margin: 50px 0;
+    margin: 20px;
     align-items: center;
     gap: 40px;
-    margin: 20px;
 }
-
 
 .hero-section .text {
     flex: 5;
@@ -142,16 +156,53 @@ nav .left a:hover {
     animation-delay: 1s;
 }
 
-
 .hero-section .headshot img {
     border-radius: 50%;
     width: 300px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.1);
+}
 
+.hero-section .headshot img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15), 0 0 0 4px rgba(0, 0, 0, 0.2);
 }
 
 .hero-section .text h2 {
     font-size: 45px;
+}
+
+/* ROLE TAGS */
+.role-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 14px 0 24px;
+}
+
+.role-tags span {
+    font-size: 11px;
+    font-family: 'Poppins', sans-serif;
+    border: 1.5px solid var(--accent);
+    color: var(--accent);
+    border-radius: 20px;
+    padding: 5px 14px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+/* BIO */
+.bio-lead {
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.7;
+    margin-bottom: 16px;
+}
+
+.hero-section .text p {
+    font-size: 15px;
+    line-height: 1.8;
+    margin-bottom: 16px;
 }
 
 .hero-section .text .work {
@@ -166,30 +217,19 @@ nav .left a:hover {
     border-radius: 8px;
 }
 
-.hero-section .text .span{
-    font-size: 70px;
-}
-
 .hero-section .text .work:hover {
-    background-color: #aeacac;
+    background-color: var(--accent);
     color: #fff;
-    border-color: #0f0e0e ;
+    border-color: var(--accent);
     transition: 0.3s ease;
     transform: scale(1.05);
 }
 
-.hero-section .headshot img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-}
-
 .section-divider {
-  border-bottom: 1px solid;
-  width: 100%;
-  margin: 60px 0; 
+    border-bottom: 1px solid;
+    width: 100%;
+    margin: 60px 0;
 }
-
-
 
 /* SKILLS SECTION */
 .skills-section {
@@ -199,16 +239,11 @@ nav .left a:hover {
 }
 
 .skills-section h1 {
-  text-align: center;
-  font-size: 35px;  /* Fixed! */
-  position: relative;
-  cursor: pointer;
-  transition: color 0.3s ease;
-}
-
-.skills-section .text {
     text-align: center;
-    margin-bottom: 20px;
+    font-size: 35px;
+    position: relative;
+    cursor: pointer;
+    transition: color 0.3s ease;
 }
 
 .skills-section .cells {
@@ -244,28 +279,12 @@ nav .left a:hover {
 .skills-section .cell:hover {
     background-color: #aeacac;
     color: #fff;
-    border-color: #0f0e0e ;
+    border-color: #0f0e0e;
     transition: 0.3s ease;
     transform: scale(1.05);
 }
 
-/* .skills-section h2::after {
-  content: "";
-  position: absolute;
-  bottom: -5px; 
-  left: 0;
-  width: 0%;
-  height: 2px;
-  background-color: black; 
-  transition: width 0.3s ease;
-} */
-
-/* }
-.skills-section h2:hover::after {
-  width: 100%;
-} */
-
-
+/* EXPERIENCE SECTION */
 .experience-section {
     padding: 0 50px;
     margin-top: 150px;
@@ -273,15 +292,15 @@ nav .left a:hover {
 }
 
 .experience-section .exp-cells .exp-cell {
-   margin-bottom: 50px;
+    margin-bottom: 50px;
 }
 
 .experience-section h1 {
-  text-align: center;
-  font-size: 35px;  /* Fixed! */
-  position: relative;
-  cursor: pointer;
-  transition: color 0.3s ease;
+    text-align: center;
+    font-size: 35px;
+    position: relative;
+    cursor: pointer;
+    transition: color 0.3s ease;
 }
 
 .experience-section .section-subtitle{
@@ -291,77 +310,50 @@ nav .left a:hover {
 }
 
 .job-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.job-header-diff {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.job-date-diff {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .job h2 {
-  margin: 0;
-  font-size: 1.5rem;
+    margin: 0;
+    font-size: 1.5rem;
 }
 
 .job h4 {
-  margin-top: 5px;
-  font-size: 1.2rem;
-  font-style: italic;
- 
+    margin-top: 5px;
+    font-size: 1.2rem;
+    font-style: italic;
 }
 
 .role-content h4 {
-  margin-top: 5px;
-  font-size: 1.2rem;
-  font-style: italic;
- 
+    margin: 0 0 10px;
+    font-size: 1.2rem;
+    font-style: italic;
 }
 
 .timeline-wrapper {
-  border-left: 2px solid black;
-  margin-left: 20px;
-  padding-left: 20px;
-  position: relative;
+    margin-left: 20px;
+    padding-left: 20px;
+    position: relative;
 }
 
 .timeline-role {
-  display: flex;
-  align-items: flex-start;
-  margin-bottom: 30px;
-  position: relative;
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 30px;
+    position: relative;
 }
 
 .timeline-dot {
-  width: 10px;
-  height: 10px;
-  background-color: black;
-  border-radius: 50%;
-  margin-left: -25px; /* aligns it with the line */
-  margin-right: 15px;
-  flex-shrink: 0;
-  margin-top: 5px;
+    display: none;
 }
-
-.role-content h4 {
-  margin: 0 0 10px;
-}
-
 
 .job ul {
-  margin-top: 10px;
-  padding-left: 20px;
-  list-style-type: disc;
+    margin-top: 10px;
+    padding-left: 20px;
+    list-style-type: disc;
 }
-
 
 .experience-section .exp-cell{
     border: 1.5px solid rgb(0, 0, 0);
@@ -372,14 +364,12 @@ nav .left a:hover {
     margin-bottom: 40px;
 }
 
-
 .exp-cell:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-  background-color: rgba(255, 255, 255, 0.05);
-  border-color: rgb(0, 0, 0);
+    transform: translateY(-6px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    background-color: rgba(255, 255, 255, 0.05);
+    border-color: rgb(0, 0, 0);
 }
-
 
 .job-header a:hover h2 {
     border-radius: 5px;
@@ -388,112 +378,155 @@ nav .left a:hover {
     cursor: pointer;
 }
 
-/* Left reveal */
+/* Reveal animations */
 .reveal-from-left {
-  opacity: 0;
-  transform: translateX(-60px);
-  transition: all 4s ease;
+    opacity: 0;
+    transform: translateX(-60px);
+    transition: all 1.2s ease;
 }
 
 .reveal-from-left.visible {
-  opacity: 1;
-  transform: translateX(0);
+    opacity: 1;
+    transform: translateX(0);
 }
 
-/* Right reveal */
 .reveal-from-right {
-  opacity: 0;
-  transform: translateX(60px);
-  transition: all 4s ease;
+    opacity: 0;
+    transform: translateX(60px);
+    transition: all 1.2s ease;
 }
 
 .reveal-from-right.visible {
-  opacity: 1;
-  transform: translateX(0);
+    opacity: 1;
+    transform: translateX(0);
 }
 
-
 @keyframes fadeUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 @keyframes fadeDown {
-  from {
-    opacity: 0;
-    transform: translateY(-30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
+/* FOOTER */
 
+footer {
+    border-top: 1px solid #000;
+    padding: 40px;
+    margin-top: 80px;
+    font-family: 'Michroma';
+}
 
+.footer-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-logo {
+    font-family: 'Qwigley';
+    font-size: 40px;
+    color: #000;
+}
+
+.footer-links {
+    display: flex;
+    gap: 24px;
+    font-size: 12px;
+}
+
+.footer-links a {
+    color: #000;
+    transition: color 0.2s;
+}
+
+.footer-links a:hover {
+    color: #868686;
+}
+
+.footer-social {
+    display: flex;
+    gap: 16px;
+    font-size: 18px;
+}
+
+.footer-social a {
+    color: #000;
+    transition: color 0.2s;
+}
+
+.footer-social a:hover {
+    color: #868686;
+}
+
+.footer-copy {
+    text-align: center;
+    font-size: 11px;
+    opacity: 0.45;
+    margin-top: 24px;
+    font-family: 'Poppins';
+}
 
 /* ========= About: responsive tweaks ========= */
 @media (max-width: 1100px) {
-  nav { padding: 0 20px; }
-  .hero-section { gap: 24px; padding: 0 24px; }
-  .skills-section, .experience-section { padding: 0 24px; }
+    nav { padding: 0 20px; }
+    .hero-section { gap: 24px; padding: 0 24px; }
+    .skills-section, .experience-section { padding: 0 24px; }
 }
 
 @media (max-width: 900px) {
-  .hero-section {
-    flex-direction: column-reverse; /* image above/below text, keeps content intact */
-    align-items: center;
-    text-align: center;
-    margin: 30px 0;
-  }
-  .hero-section .headshot {
-    justify-content: center;
-  }
-  .hero-section .headshot img {
-    width: 220px;
-  }
-  .hero-section .text h2 { font-size: 36px; }
-  .hero-section .text .work { margin: 16px auto; }
+    .hero-section {
+        flex-direction: column-reverse;
+        align-items: center;
+        text-align: center;
+        margin: 30px 0;
+    }
+    .hero-section .headshot { justify-content: center; }
+    .hero-section .headshot img { width: 220px; }
+    .hero-section .text h2 { font-size: 36px; }
+    .hero-section .text .work { margin: 16px auto; }
+    .role-tags { justify-content: center; }
 
-  .skills-section { margin-top: 80px; margin-bottom: 160px; }
-  .skills-section .cells .cell {
-    width: 45%;
-    min-width: 220px;
-  }
+    .skills-section { margin-top: 80px; margin-bottom: 160px; }
+    .skills-section .cells .cell { width: 45%; min-width: 220px; }
 
-  .experience-section .exp-cell { padding: 14px; }
-  .timeline-wrapper { margin-left: 12px; padding-left: 16px; }
+    .experience-section .exp-cell { padding: 14px; }
+    .timeline-wrapper { margin-left: 12px; padding-left: 16px; }
+}
+
+@media (max-width: 600px) {
+    footer { padding: 28px 20px; }
+    .footer-inner { flex-direction: column; align-items: flex-start; gap: 16px; }
+    .footer-links { gap: 16px; }
 }
 
 @media (max-width: 560px) {
-  nav {
-    height: auto;
-    padding: 10px 14px;
-    gap: 8px;
-  }
-  nav .left a { font-size: 36px; }
-  nav .center a, nav .right a { padding: 8px; font-size: 13px; }
+    nav { height: auto; padding: 10px 14px; gap: 8px; }
+    nav .left a { font-size: 36px; }
+    nav .right #contact { padding: 8px; font-size: 13px; }
 
-  .hero-section .text h2 { font-size: 30px; }
-  .hero-section .text .span { font-size: 48px; }
+    .hero-section .text h2 { font-size: 30px; }
+    .skills-section h1, .experience-section h1 { font-size: 28px; }
 
-  .skills-section h1,
-  .experience-section h1 { font-size: 28px; }
-
-  .job-header, .job-header-diff {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 6px;
-  }
-  .job h2 { font-size: 1.25rem; }
-  .job h4, .role-content h4 { font-size: 1.05rem; }
-  .timeline-dot { margin-left: -20px; }
+    .job-header { flex-direction: column; align-items: flex-start; gap: 6px; }
+    .job h2 { font-size: 1.25rem; }
+    .job h4, .role-content h4 { font-size: 1.05rem; }
 }
 
 @media (max-width: 380px) {
-  .hero-section .headshot img { width: 180px; }
-  .skills-section .cells .cell { width: 100%; }
+    .hero-section .headshot img { width: 180px; }
+    .skills-section .cells .cell { width: 100%; }
 }
-

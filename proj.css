@@ -1,7 +1,8 @@
 :root{
     --hover-color: rgb(248, 244, 244);
     --link-color: rgb(0, 0, 0);
-    --background-color: #000000e6; 
+    --background-color: #000000e6;
+    --accent: #cccccc;
 }
 
 *{
@@ -19,16 +20,15 @@ body{
 }
 
 #scroll-progress {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 5px;
-  background: rgb(255, 255, 255);
-  width: 0%;
-  z-index: 9999;
-  transition: width 0.1s ease-out;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    background: var(--accent);
+    width: 0%;
+    z-index: 9999;
+    transition: width 0.1s ease-out;
 }
-
 
 a{
     color: var(--link-color);
@@ -51,66 +51,78 @@ nav{
     animation-delay: 2.0s;
 }
 
-
-
 nav .left a{
     font-size: 50px;
     font-family: 'Qwigley';
     font-weight: normal;
     align-items: center;
     color: white;
-    
-}
-
-nav .center a{
-    font-size: 20px;
-    border: 2px solid;
-    border-radius: 4px;
-    margin-right: 2px;
-    display: inline-block;
-    padding: 10px;
-    color: white;
-
-}
-
-nav .right a{
-    font-size: 12px ;
-    font-weight: bold;
-    border: 2px solid;
-    border-radius: 4px;
-    padding: 10px;
-    transition: 0.3s;
-    display: inline-block;
-    color: white;
-
-}
-
-nav .center #github:hover {
-    background-color: #cccccc;
-    color: #000000;
-    border-color: #333 ;
-    transition: 0.3s ease;
-    transform: scale(1.05);
-}
-nav .center #linkedin:hover {
-    background-color: #cccccc;
-    color: #000000;
-    border-color: #333 ;
-    transition: 0.3s ease;
-    transform: scale(1.05);
-}
-nav .right a:hover {
-    background-color: #cccccc;
-    color: #000000;
-    border-color: #333 ;
-    transition: 0.3s ease;
-    transform: scale(1.05);
 }
 
 nav .left a:hover {
     color: #cccccc;
-    transform: scale(1.05);
     transition: all 0.2s ease-in-out;
+}
+
+nav .center {
+    display: flex;
+    gap: 28px;
+    align-items: center;
+}
+
+nav .center a {
+    font-size: 12px;
+    font-family: 'Michroma';
+    letter-spacing: 1px;
+    color: white;
+    padding: 4px 0;
+    border-bottom: 2px solid transparent;
+    transition: color 0.2s, border-color 0.2s;
+    display: inline-block;
+}
+
+nav .center a:hover {
+    color: var(--accent);
+}
+
+nav .center a.active {
+    color: var(--accent);
+    border-bottom: 2px solid var(--accent);
+}
+
+nav .right {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+nav .right #github,
+nav .right #linkedin {
+    font-size: 18px;
+    color: white;
+    transition: color 0.2s;
+}
+
+nav .right #github:hover,
+nav .right #linkedin:hover {
+    color: var(--accent);
+}
+
+nav .right #contact {
+    font-size: 12px;
+    font-weight: bold;
+    border: 2px solid white;
+    border-radius: 4px;
+    padding: 10px;
+    color: white;
+    transition: 0.3s;
+    display: inline-block;
+}
+
+nav .right #contact:hover {
+    background-color: var(--accent);
+    color: #000;
+    border-color: var(--accent);
 }
 
 /* MAIN */
@@ -125,7 +137,7 @@ nav .left a:hover {
 }
 
 .center-block{
-    margin-top: 100px;
+    margin-top: 60px;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -134,7 +146,7 @@ nav .left a:hover {
     opacity: 0;
     animation: fadeDown 0.8s ease-out forwards;
     animation-delay: 2.0s;
-    margin-bottom: 250px;
+    margin-bottom: 60px;
 }
 
 .center-block span{
@@ -143,9 +155,8 @@ nav .left a:hover {
     border-radius: 2px;
 }
 
-
 .center-block h1{
-    font-size: 40px ;
+    font-size: 40px;
 }
 
 .center-block h4{
@@ -164,7 +175,6 @@ nav .left a:hover {
     margin-bottom: 40px;
     height: 400px;
     width: 600px;
-
 }
 
 .design {
@@ -177,159 +187,223 @@ nav .left a:hover {
     margin-bottom: 40px;
     height: 400px;
     width: 600px;
-
 }
 
 #build-projects {
-  margin-top: 100px;
+    margin-top: 40px;
 }
 
 #design-projects {
-  margin-top: 100px;
-}
-
-
-.see-work a {
-  color: inherit;
-  text-decoration: none;
+    margin-top: 40px;
 }
 
 .see-work a {
-  color: white;
-  text-decoration: none;
-  border: white 1.5px solid;
-  padding: 20px;
-  border-radius: 2px;
-  display: inline-block;
-  transition: 0.3s ease;
+    color: white;
+    text-decoration: none;
+    border: white 1.5px solid;
+    padding: 20px;
+    border-radius: 2px;
+    display: inline-block;
+    transition: 0.3s ease;
 }
 
 .see-work a:hover {
-    background-color: #cccccc;
-    color: black;
-  transform: scale(1.05);
+    background-color: var(--accent);
+    border-color: var(--accent);
+    color: #000;
+    transform: scale(1.05);
 }
 
-
-
-/* SECTION-BUILD-PROJECTS */
+/* SECTION DIVIDER */
 
 .section-divider {
-  border-bottom: 1px white solid;
-  width: 100%;
+    border-bottom: 1px white solid;
+    width: 100%;
 }
 
-.all-projects{
-    margin-top: 100px;
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    flex-wrap: wrap;
+/* PROJECT CARDS */
+
+.all-projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(440px, 1fr));
+    gap: 20px;
+    max-width: 1300px;
+    margin: 60px auto 80px;
+    padding: 0 40px;
     color: white;
     opacity: 0;
     animation: fadeDown 0.8s ease-out forwards;
     animation-delay: 2.5s;
-    margin-bottom: 250px;
-    margin-top: 200px;
-}
-
-
-.all-projects a{
-    border: white 1.5px solid;
-    padding: 5px 25px;
-    border-radius: 2px;
-    cursor: pointer;
 }
 
 .all-projects h1{
-    font-size: 30px ;
-}
-
-.all-projects h4{
-    font-style: italic;
+    font-size: 30px;
 }
 
 .project-1 {
     border: 1.5px solid rgb(255, 255, 255);
     border-radius: 5px;
-    padding: 30px 50px;
-    margin: 10px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
-    margin-bottom: 40px;
+    padding: 30px 40px;
     height: auto;
-    width: 600px;
-    opacity: 0;                   
-    transform: translateY(50px);   
-    transition: opacity 0.6s ease, transform 0.6s ease;    
+    width: 100%;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
 .project-1.visible {
-  opacity: 1;                    
-  transform: translateY(0);      
+    opacity: 1;
+    transform: translateY(0);
 }
 
+.project-number {
+    display: block;
+    font-size: 11px;
+    letter-spacing: 3px;
+    opacity: 0.35;
+    margin-bottom: 10px;
+    font-family: 'Michroma';
+}
 
+.project-desc {
+    font-size: 14px;
+    line-height: 1.75;
+    margin: 12px 0 20px;
+    opacity: 0.8;
+    font-style: normal;
+}
 
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 16px 0 24px;
+}
 
+.tag {
+    font-size: 10px;
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    border-radius: 20px;
+    padding: 4px 12px;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    font-family: 'Michroma';
+}
+
+/* FOOTER */
+
+footer {
+    border-top: 1px solid white;
+    padding: 40px;
+    margin-top: 80px;
+    font-family: 'Michroma';
+    color: white;
+}
+
+.footer-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-logo {
+    font-family: 'Qwigley';
+    font-size: 40px;
+    color: white;
+}
+
+.footer-links {
+    display: flex;
+    gap: 24px;
+    font-size: 12px;
+}
+
+.footer-links a {
+    color: white;
+    transition: color 0.2s;
+}
+
+.footer-links a:hover {
+    color: #cccccc;
+}
+
+.footer-social {
+    display: flex;
+    gap: 16px;
+    font-size: 18px;
+}
+
+.footer-social a {
+    color: white;
+    transition: color 0.2s;
+}
+
+.footer-social a:hover {
+    color: #cccccc;
+}
+
+.footer-copy {
+    text-align: center;
+    font-size: 11px;
+    opacity: 0.4;
+    margin-top: 24px;
+    font-family: 'Poppins';
+    color: white;
+}
 
 @keyframes fadeDown {
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
-
-
 
 /* ========= Projects: responsive tweaks ========= */
 @media (max-width: 1200px) {
-  nav { padding: 0 20px; }
-  .center-block { gap: 24px; }
-  .build, .design { width: 500px; padding: 20px 40px; }
-  .project-1 { width: 520px; padding: 24px 34px; }
+    nav { padding: 0 20px; }
+    .center-block { gap: 24px; }
+    .build, .design { width: 500px; padding: 20px 40px; }
 }
 
 @media (max-width: 600px) {
-  .opening h1 { font-size: 52px; }
-  .center-block {
-    margin-top: 60px;
-    flex-direction: column;
-    align-items: center;
-    gap: 28px;
-  }
-  .build, .design {
-    width: 100%;
-    max-width: 100%;
-    padding: 24px 20px;
-    height: auto;
-  }
-  .center-block h1 { font-size: 32px; }
-  .center-block h4 { width: auto; max-width: 520px; }
+    .opening h1 { font-size: 40px; }
+    .center-block {
+        margin-top: 60px;
+        flex-direction: column;
+        align-items: center;
+        gap: 28px;
+    }
+    .build, .design {
+        width: 100%;
+        max-width: 100%;
+        padding: 24px 20px;
+        height: auto;
+    }
+    .center-block h1 { font-size: 32px; }
+    .center-block h4 { width: auto; max-width: 520px; }
 
-  .all-projects { margin-top: 120px; }
-  .project-1 {
-    width: 90%;
-    max-width: 680px;
-  }
-}
+    .all-projects {
+        grid-template-columns: 1fr;
+        padding: 0 20px;
+        margin-top: 40px;
+    }
+    .project-1 { padding: 20px; }
+    .project1-header h1 { font-size: 24px; }
 
-@media (max-width: 600px) {
-  nav {
-    height: auto;
-    padding: 10px 14px;
-    gap: 8px;
-  }
-  nav .left a { font-size: 36px; }
-  nav .center a, nav .right a { padding: 8px; font-size: 13px; }
+    nav { height: auto; padding: 10px 14px; gap: 8px; }
+    nav .left a { font-size: 36px; }
+    nav .right #contact { padding: 8px; font-size: 13px; }
 
-  .opening h1 { font-size: 40px; }
-  .see-work a { padding: 12px 16px; }
+    .see-work a { padding: 12px 16px; }
 
-  .project-1 { padding: 20px; }
-  .project1-header h1 { font-size: 24px; }
-  .project1-subtitle h4 { font-size: 16px; }
+    footer { padding: 28px 20px; }
+    .footer-inner { flex-direction: column; align-items: flex-start; gap: 16px; }
+    .footer-links { gap: 16px; }
 }
 
 @media (max-width: 380px) {
-  .opening h1 { font-size: 34px; }
+    .opening h1 { font-size: 34px; }
 }

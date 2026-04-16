@@ -1,7 +1,8 @@
 :root{
     --hover-color: rgb(248, 244, 244);
     --link-color: rgb(0, 0, 0);
-    --background-color: #e0e0e0; /* Light neutral background */
+    --background-color: #e0e0e0;
+    --accent: #333333;
 }
 
 *{
@@ -38,101 +39,118 @@ nav{
     animation-delay: 0.7s;
 }
 
-
-
 nav .left a{
     font-size: 50px;
     font-family: 'Qwigley';
     font-weight: normal;
     align-items: center;
-    
 }
 
-nav .center a{
-    font-size: 20px;
-    border: 2px solid;
-    border-radius: 4px;
-    margin-right: 2px;
+nav .left a:hover {
+    color: #868686;
+    transition: all 0.2s ease-in-out;
+}
+
+nav .center {
+    display: flex;
+    gap: 28px;
+    align-items: center;
+}
+
+nav .center a {
+    font-size: 12px;
+    font-family: 'Michroma';
+    letter-spacing: 1px;
+    color: #000;
+    padding: 4px 0;
+    border-bottom: 2px solid transparent;
+    transition: color 0.2s, border-color 0.2s;
     display: inline-block;
-    padding: 10px;
 }
 
-nav .right a{
-    font-size: 12px ;
+nav .center a:hover {
+    color: var(--accent);
+}
+
+nav .center a.active {
+    color: var(--accent);
+    border-bottom: 2px solid var(--accent);
+}
+
+nav .right {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+nav .right #github,
+nav .right #linkedin {
+    font-size: 18px;
+    color: #000;
+    transition: color 0.2s;
+}
+
+nav .right #github:hover,
+nav .right #linkedin:hover {
+    color: var(--accent);
+}
+
+nav .right #contact {
+    font-size: 12px;
     font-weight: bold;
-    border: 2px solid;
+    border: 2px solid #000;
     border-radius: 4px;
     padding: 10px;
+    color: #000;
     transition: 0.3s;
     display: inline-block;
 }
 
-nav .left a:hover {
-  color: #868686;
-  transform: scale(1.05);
-  transition: all 0.2s ease-in-out;
-}
-
-nav .center #github:hover {
-    background-color: #333;
+nav .right #contact:hover {
+    background-color: var(--accent);
     color: #fff;
-    border-color: #333 ;
-    transition: 0.3s ease;
-    transform: scale(1.05);
-}
-nav .center #linkedin:hover {
-    background-color: #333;
-    color: #fff;
-    border-color: #333 ;
-    transition: 0.3s ease;
-    transform: scale(1.05);
-}
-nav .right a:hover {
-    background-color: #333;
-    color: #fff;
-    border-color: #333 ;
-    transition: 0.3s ease;
-    transform: scale(1.05);
+    border-color: var(--accent);
 }
 
 /* MAIN */
 
-.middle {    
-  display: flex; /* ADD THIS */
-  justify-content: center; /* center horizontally */
-  align-items: center;     /* center vertically */
-  padding: 0 20px;
-        
+.middle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
 }
-
-
-/* SECTION 2 */
-
-
 
 .middle .name {
     text-align: center;
     width: 100%;
     margin-top: 200px;
 }
+
 .name h1{
-    font-size: clamp(2rem, 7vw, 10rem); /* responsive size */
+    font-size: clamp(2rem, 7vw, 10rem);
     margin: 0;
     line-height: 120px;
     transition: color 0.5s ease;
 }
 
 .middle #last-name{
-  opacity: 0;
-  transition: opacity 1s ease-in ;
+    opacity: 0;
+    transition: opacity 1s ease-in;
 }
 
 .middle .name #last-name{
-  margin-top: 50px;
+    margin-top: 50px;
 }
 
-
-
+.tagline {
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    opacity: 0.45;
+    margin-top: 28px;
+}
 
 .ap{
     font-size: 20px;
@@ -145,7 +163,7 @@ nav .right a:hover {
 }
 
 .ap a{
-    font-size: 20px ;
+    font-size: 20px;
     font-weight: bold;
     border: 2px solid;
     border-radius: 4px;
@@ -155,114 +173,167 @@ nav .right a:hover {
 }
 
 .name h1::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: 15px; /* adjust spacing below text */
-  width: 0%;
-  bottom: -5px;
-  height: 3px;
-  background-color: black;
-  transition: width 0.3s ease;
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -5px;
+    width: 0%;
+    height: 3px;
+    background-color: black;
+    transition: width 0.3s ease;
 }
 
 .name h1:hover::after {
-  width: 60%; /* underline width */
+    width: 60%;
 }
 
 /* FADE IN + SLIDE UP ANIMATION */
 
-
 .ap {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeUp 0.8s ease-out forwards;
-  animation-delay: 0.7s;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 0.8s ease-out forwards;
+    animation-delay: 0.7s;
 }
 
 .middle {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeUp 0.8s ease-out forwards;
-  animation-delay: 0.4s;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 0.8s ease-out forwards;
+    animation-delay: 0.4s;
 }
 
 @keyframes fadeUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 @keyframes fadeDown {
-  from {
-    opacity: 0;
-    transform: translateY(-30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-
-
 .ap a:hover {
-    background-color: #333;
+    background-color: var(--accent);
     color: #fff;
-    border-color: #333 ;
+    border-color: var(--accent);
     transition: 0.3s ease;
     transform: scale(1.05);
 }
 
+/* FOOTER */
+
+footer {
+    border-top: 1px solid #000;
+    padding: 40px;
+    margin-top: 80px;
+    font-family: 'Michroma';
+}
+
+.footer-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-logo {
+    font-family: 'Qwigley';
+    font-size: 40px;
+    color: #000;
+}
+
+.footer-links {
+    display: flex;
+    gap: 24px;
+    font-size: 12px;
+}
+
+.footer-links a {
+    color: #000;
+    transition: color 0.2s;
+}
+
+.footer-links a:hover {
+    color: #868686;
+}
+
+.footer-social {
+    display: flex;
+    gap: 16px;
+    font-size: 18px;
+}
+
+.footer-social a {
+    color: #000;
+    transition: color 0.2s;
+}
+
+.footer-social a:hover {
+    color: #868686;
+}
+
+.footer-copy {
+    text-align: center;
+    font-size: 11px;
+    opacity: 0.45;
+    margin-top: 24px;
+    font-family: 'Poppins';
+}
+
 /* ========= Home: responsive tweaks ========= */
 @media (max-width: 1024px) {
-  nav { padding: 0 20px; }
-  .ap { padding: 0 20px; }
+    nav { padding: 0 20px; }
+    .ap { padding: 0 20px; }
 }
 
 @media (max-width: 700px) {
-  nav {
-    height: auto;
-    padding: 10px 16px;
-    gap: 10px;
-  }
-  nav .center a, nav .right a { padding: 8px; font-size: 14px; }
-  nav .left a { font-size: 40px; }
+    nav {
+        height: auto;
+        padding: 10px 16px;
+        gap: 10px;
+    }
+    nav .right #contact { padding: 8px; font-size: 14px; }
+    nav .left a { font-size: 40px; }
 
-  .middle { padding: 0 18px; }
-  .middle .name { margin-top: 140px; }
-  .name h1 {
-    font-size: clamp(2rem, 10vw, 3.6rem);
-    line-height: 1.1; /* tighter on phones */
-  }
+    .middle { padding: 0 18px; }
+    .middle .name { margin-top: 140px; }
+    .name h1 {
+        font-size: clamp(2rem, 10vw, 3.6rem);
+        line-height: 1.1;
+    }
 
-  .ap {
-    margin-top: 60px;
-    flex-direction: column;
-    gap: 14px;
-    height: auto;
-    padding: 0 16px;
-  }
-  .ap a {
-    width: 100%;
-    max-width: 420px;
-    text-align: center;
-    padding: 10px 18px;
-    font-size: 18px;
-  }
+    .ap {
+        margin-top: 60px;
+        flex-direction: column;
+        gap: 14px;
+        height: auto;
+        padding: 0 16px;
+    }
+    .ap a {
+        width: 100%;
+        max-width: 420px;
+        text-align: center;
+        padding: 10px 18px;
+        font-size: 18px;
+    }
+
+    footer { padding: 28px 20px; }
+    .footer-inner { flex-direction: column; align-items: flex-start; gap: 16px; }
+    .footer-links { gap: 16px; }
 }
 
 @media (max-width: 380px) {
-  nav .left a { font-size: 34px; }
-  .ap a { font-size: 16px; }
+    nav .left a { font-size: 34px; }
+    .ap a { font-size: 16px; }
 }
-
-
-   
-
-
-
-
-
