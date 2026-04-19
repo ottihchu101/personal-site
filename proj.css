@@ -243,12 +243,50 @@ nav .right #contact:hover {
 .project-1 {
     border: 1.5px solid rgb(255, 255, 255);
     border-radius: 5px;
-    padding: 30px 40px;
+    padding: 0;
     height: auto;
     width: 100%;
     opacity: 0;
     transform: translateY(50px);
     transition: opacity 0.6s ease, transform 0.6s ease;
+    overflow: hidden;
+}
+
+.project-snapshot {
+    width: 100%;
+    height: 250px;
+    background-color: #1a1a1a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 40px;
+    box-sizing: border-box;
+    margin: 20px 0;
+}
+
+.project-snapshot img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+    transition: transform 0.3s ease;
+}
+
+.project-1:hover .project-snapshot img {
+    transform: scale(1.05);
+}
+
+.project-1 > * {
+    padding: 0 40px;
+}
+
+.project-1 > .project-number {
+    display: block;
+    padding-top: 30px;
+}
+
+.project-1 .see-work {
+    margin-bottom: 30px;
 }
 
 .project-1.visible {
@@ -271,6 +309,7 @@ nav .right #contact:hover {
     margin: 12px 0 20px;
     opacity: 0.8;
     font-style: normal;
+    padding: 0 40px;
 }
 
 .project-tags {
@@ -278,6 +317,7 @@ nav .right #contact:hover {
     flex-wrap: wrap;
     gap: 8px;
     margin: 16px 0 24px;
+    padding: 0 40px;
 }
 
 .tag {
@@ -390,7 +430,10 @@ footer {
         padding: 0 20px;
         margin-top: 40px;
     }
-    .project-1 { padding: 20px; }
+    .project-1 { padding: 0; }
+    .project-snapshot { height: 200px; padding: 20px 20px; }
+    .project-1 > * { padding: 0 20px; }
+    .project-1 > .project-number { padding-top: 20px; }
     .project1-header h1 { font-size: 24px; }
 
     nav { height: auto; padding: 10px 14px; gap: 8px; }
