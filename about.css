@@ -34,6 +34,7 @@ nav{
     height: 80px;
     align-items: center;
     border-bottom: 1px solid;
+    position: relative;
     transform: translateY(20px);
     opacity: 0;
     animation: fadeDown 0.8s ease-out forwards;
@@ -56,6 +57,9 @@ nav .center {
     display: flex;
     gap: 28px;
     align-items: center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 nav .center a {
@@ -291,10 +295,6 @@ nav .right #contact:hover {
     margin-bottom: 100px;
 }
 
-.experience-section .exp-cells .exp-cell {
-    margin-bottom: 50px;
-}
-
 .experience-section h1 {
     text-align: center;
     font-size: 35px;
@@ -303,79 +303,133 @@ nav .right #contact:hover {
     transition: color 0.3s ease;
 }
 
-.experience-section .section-subtitle{
+.experience-section .section-subtitle {
     text-align: center;
     font-size: 1rem;
     margin-bottom: 40px;
 }
 
-.job-header {
+/* Alternating left/right timeline */
+.alt-timeline {
+    position: relative;
+    padding: 20px 0;
+    margin-top: 40px;
+}
+
+.alt-timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: #000;
+}
+
+.alt-timeline-item {
+    position: relative;
+    width: 50%;
+    margin-bottom: 50px;
+}
+
+.alt-timeline-item {
     display: flex;
-    justify-content: space-between;
     align-items: center;
 }
 
-.job h2 {
-    margin: 0;
-    font-size: 1.5rem;
+.alt-timeline-item::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 2px;
+    background-color: #000;
 }
 
-.job h4 {
-    margin-top: 5px;
-    font-size: 1.2rem;
-    font-style: italic;
+.alt-timeline-item.left {
+    padding-right: 50px;
+    justify-content: flex-end;
 }
 
-.role-content h4 {
-    margin: 0 0 10px;
-    font-size: 1.2rem;
-    font-style: italic;
+.alt-timeline-item.left::after {
+    right: 0;
 }
 
-.timeline-wrapper {
-    margin-left: 20px;
-    padding-left: 20px;
-    position: relative;
+.alt-timeline-item.right {
+    padding-left: 50px;
+    margin-left: 50%;
+    justify-content: flex-start;
 }
 
-.timeline-role {
-    display: flex;
-    align-items: flex-start;
-    margin-bottom: 30px;
-    position: relative;
+.alt-timeline-item.right::after {
+    left: 0;
 }
 
-.timeline-dot {
-    display: none;
-}
-
-.job ul {
-    margin-top: 10px;
-    padding-left: 20px;
-    list-style-type: disc;
-}
-
-.experience-section .exp-cell{
-    border: 1.5px solid rgb(0, 0, 0);
+.exp-card {
+    border: 1.5px solid #000;
     border-radius: 5px;
-    padding: 10px 20px;
-    margin: 10px;
+    padding: 20px 24px;
     transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
-    margin-bottom: 40px;
 }
 
-.exp-cell:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-    background-color: rgba(255, 255, 255, 0.05);
-    border-color: rgb(0, 0, 0);
+.exp-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    background-color: rgba(255, 255, 255, 0.4);
 }
 
-.job-header a:hover h2 {
-    border-radius: 5px;
+.exp-date {
+    display: block;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    opacity: 0.5;
+    margin-bottom: 8px;
+    font-family: 'Michroma';
+}
+
+.exp-card h2 {
+    margin: 0 0 6px;
+    font-size: 1.15rem;
+}
+
+.exp-card h4 {
+    margin: 0;
+    font-size: 0.95rem;
+    font-weight: 400;
+    font-style: italic;
+    color: #555;
+}
+
+.exp-card a h2 {
+    transition: color 0.2s ease;
+}
+
+.exp-card a:hover h2 {
     color: #868686;
-    transition: 0.3s ease-out;
+}
+
+/* Leadership section */
+.leadership-section {
+    padding: 0 50px;
+    margin-top: 80px;
+    margin-bottom: 100px;
+}
+
+.leadership-section h1 {
+    text-align: center;
+    font-size: 35px;
+    position: relative;
     cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.leadership-section .section-subtitle {
+    text-align: center;
+    font-size: 1rem;
+    margin-bottom: 40px;
 }
 
 /* Reveal animations */
@@ -503,8 +557,24 @@ footer {
     .skills-section { margin-top: 80px; margin-bottom: 160px; }
     .skills-section .cells .cell { width: 45%; min-width: 220px; }
 
-    .experience-section .exp-cell { padding: 14px; }
-    .timeline-wrapper { margin-left: 12px; padding-left: 16px; }
+    .experience-section, .leadership-section { padding: 0 24px; }
+}
+
+@media (max-width: 520px) {
+    .alt-timeline::before { left: 10px; transform: none; }
+    .alt-timeline-item,
+    .alt-timeline-item.right {
+        width: 100%;
+        margin-left: 0;
+        padding-left: 36px;
+        padding-right: 0;
+    }
+    .alt-timeline-item::after,
+    .alt-timeline-item.left::after,
+    .alt-timeline-item.right::after {
+        left: 4px;
+        right: auto;
+    }
 }
 
 @media (max-width: 600px) {

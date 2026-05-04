@@ -45,6 +45,7 @@ nav{
     height: 80px;
     align-items: center;
     border-bottom: white solid;
+    position: relative;
     transform: translateY(20px);
     opacity: 0;
     animation: fadeDown 0.8s ease-out forwards;
@@ -68,6 +69,9 @@ nav .center {
     display: flex;
     gap: 28px;
     align-items: center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 nav .center a {
