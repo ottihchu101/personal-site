@@ -12,6 +12,7 @@
 
 html{
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 body{
@@ -534,69 +535,119 @@ footer {
     font-family: 'Poppins';
 }
 
-/* ========= About: responsive tweaks ========= */
+/* ========= About: responsive ========= */
+
+/* Large tablet / small laptop */
 @media (max-width: 1100px) {
     nav { padding: 0 20px; }
     .hero-section { gap: 24px; padding: 0 24px; }
-    .skills-section, .experience-section { padding: 0 24px; }
+    .skills-section, .experience-section, .leadership-section { padding: 0 24px; }
 }
 
+/* Tablet (iPad portrait ~768px) */
 @media (max-width: 900px) {
     .hero-section {
         flex-direction: column-reverse;
         align-items: center;
         text-align: center;
-        margin: 30px 0;
+        margin: 20px 0;
+        padding: 0 24px;
     }
+    .hero-section .text,
+    .hero-section .headshot { width: 100%; flex: none; }
     .hero-section .headshot { justify-content: center; }
-    .hero-section .headshot img { width: 220px; }
-    .hero-section .text h2 { font-size: 36px; }
+    .hero-section .headshot img { width: 200px; }
+    .hero-section .text h2 { font-size: 32px; }
     .hero-section .text .work { margin: 16px auto; }
     .role-tags { justify-content: center; }
+    .section-divider { margin: 40px 0; }
 
-    .skills-section { margin-top: 80px; margin-bottom: 160px; }
-    .skills-section .cells .cell { width: 45%; min-width: 220px; }
+    .skills-section { margin-top: 60px; margin-bottom: 80px; padding: 0 24px; }
+    .skills-section h1 { font-size: 28px; }
+    .skills-section .cells .cell { width: 45%; min-width: 160px; }
 
-    .experience-section, .leadership-section { padding: 0 24px; }
+    .experience-section { margin-top: 60px; margin-bottom: 60px; padding: 0 24px; }
+    .experience-section h1 { font-size: 28px; }
+    .leadership-section { margin-top: 40px; margin-bottom: 60px; padding: 0 24px; }
+    .leadership-section h1 { font-size: 28px; }
 }
 
-@media (max-width: 520px) {
+/* Phone */
+@media (max-width: 600px) {
+    /* Nav: two-row layout */
+    nav { height: auto; padding: 10px 14px; flex-wrap: wrap; gap: 0; }
+    nav .left a { font-size: 36px; }
+    nav .center {
+        position: static;
+        transform: none;
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        padding: 10px 0 6px;
+        gap: 24px;
+        border-top: 1px solid rgba(0, 0, 0, 0.12);
+        margin-top: 6px;
+    }
+    nav .right #contact { padding: 8px 10px; font-size: 11px; }
+
+    /* Hero */
+    .hero-section { padding: 0 16px; }
+    .hero-section .headshot img { width: 160px; }
+    .hero-section .text h2 { font-size: 26px; }
+    .hero-section .text p { font-size: 14px; line-height: 1.7; }
+    .bio-lead { font-size: 15px; }
+    .section-divider { margin: 28px 0; }
+
+    /* Skills */
+    .skills-section { margin-top: 36px; margin-bottom: 36px; padding: 0 16px; }
+    .skills-section h1 { font-size: 24px; }
+    .skills-section .cells .cell { width: calc(50% - 16px); min-width: 0; }
+    .skills-section .cells .cell span { font-size: 14px; }
+
+    /* Experience / Leadership */
+    .experience-section { margin-top: 36px; margin-bottom: 36px; padding: 0 16px; }
+    .experience-section h1 { font-size: 24px; }
+    .experience-section .section-subtitle { font-size: 0.85rem; }
+    .leadership-section { margin-top: 28px; margin-bottom: 60px; padding: 0 16px; }
+    .leadership-section h1 { font-size: 24px; }
+    .leadership-section .section-subtitle { font-size: 0.85rem; }
+
+    /* Single-column timeline */
+    .alt-timeline { margin-top: 24px; }
     .alt-timeline::before { left: 10px; transform: none; }
     .alt-timeline-item,
     .alt-timeline-item.right {
         width: 100%;
         margin-left: 0;
-        padding-left: 36px;
+        padding-left: 40px;
         padding-right: 0;
+        justify-content: flex-start;
     }
     .alt-timeline-item::after,
     .alt-timeline-item.left::after,
     .alt-timeline-item.right::after {
-        left: 4px;
+        left: 0;
         right: auto;
+        width: 30px;
     }
-}
+    .exp-card { padding: 14px 16px; }
+    .exp-card h2 { font-size: 1rem; }
 
-@media (max-width: 600px) {
-    footer { padding: 28px 20px; }
+    /* Reveal: swap to vertical slide to avoid horizontal scroll */
+    .reveal-from-left { transform: translateY(30px); }
+    .reveal-from-left.visible { transform: translateY(0); }
+    .reveal-from-right { transform: translateY(30px); }
+    .reveal-from-right.visible { transform: translateY(0); }
+
+    /* Footer */
+    footer { padding: 28px 16px; }
     .footer-inner { flex-direction: column; align-items: flex-start; gap: 16px; }
     .footer-links { gap: 16px; }
 }
 
-@media (max-width: 560px) {
-    nav { height: auto; padding: 10px 14px; gap: 8px; }
-    nav .left a { font-size: 36px; }
-    nav .right #contact { padding: 8px; font-size: 13px; }
-
-    .hero-section .text h2 { font-size: 30px; }
-    .skills-section h1, .experience-section h1 { font-size: 28px; }
-
-    .job-header { flex-direction: column; align-items: flex-start; gap: 6px; }
-    .job h2 { font-size: 1.25rem; }
-    .job h4, .role-content h4 { font-size: 1.05rem; }
-}
-
+/* Small phone */
 @media (max-width: 380px) {
-    .hero-section .headshot img { width: 180px; }
-    .skills-section .cells .cell { width: 100%; }
+    .hero-section .headshot img { width: 130px; }
+    .skills-section .cells .cell { width: 100%; max-width: 280px; }
+    .experience-section h1, .leadership-section h1 { font-size: 20px; }
 }

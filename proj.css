@@ -12,6 +12,7 @@
 
 html{
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 body{
@@ -405,20 +406,60 @@ footer {
     }
 }
 
-/* ========= Projects: responsive tweaks ========= */
+/* ========= Projects: responsive ========= */
+
 @media (max-width: 1200px) {
     nav { padding: 0 20px; }
     .center-block { gap: 24px; }
     .build, .design { width: 500px; padding: 20px 40px; }
 }
 
-@media (max-width: 600px) {
-    .opening h1 { font-size: 40px; }
+/* Tablet (iPad portrait ~768px) — stacks the build/design blocks */
+@media (max-width: 900px) {
+    .opening h1 { font-size: 52px; }
     .center-block {
-        margin-top: 60px;
         flex-direction: column;
         align-items: center;
         gap: 28px;
+        margin-top: 40px;
+    }
+    .build, .design {
+        width: 100%;
+        max-width: 580px;
+        padding: 28px 40px;
+        height: auto;
+    }
+    .center-block h4 { margin-bottom: 40px; width: auto; }
+    .all-projects {
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        padding: 0 24px;
+    }
+}
+
+/* Phone */
+@media (max-width: 600px) {
+    /* Nav: two-row layout */
+    nav { height: auto; padding: 10px 14px; flex-wrap: wrap; gap: 0; }
+    nav .left a { font-size: 36px; }
+    nav .center {
+        position: static;
+        transform: none;
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        padding: 10px 0 6px;
+        gap: 24px;
+        border-top: 1px solid rgba(255, 255, 255, 0.15);
+        margin-top: 6px;
+    }
+    nav .right #contact { padding: 8px; font-size: 13px; }
+
+    .opening h1 { font-size: 36px; }
+    .center-block {
+        margin-top: 40px;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
     }
     .build, .design {
         width: 100%;
@@ -426,23 +467,20 @@ footer {
         padding: 24px 20px;
         height: auto;
     }
-    .center-block h1 { font-size: 32px; }
-    .center-block h4 { width: auto; max-width: 520px; }
+    .center-block h1 { font-size: 28px; }
+    .center-block h4 { width: auto; margin-bottom: 20px; font-size: 13px; }
 
     .all-projects {
         grid-template-columns: 1fr;
-        padding: 0 20px;
+        padding: 0 16px;
         margin-top: 40px;
     }
     .project-1 { padding: 0; }
-    .project-snapshot { height: 200px; padding: 20px 20px; }
-    .project-1 > * { padding: 0 20px; }
-    .project-1 > .project-number { padding-top: 20px; }
-    .project1-header h1 { font-size: 24px; }
-
-    nav { height: auto; padding: 10px 14px; gap: 8px; }
-    nav .left a { font-size: 36px; }
-    nav .right #contact { padding: 8px; font-size: 13px; }
+    .project-snapshot { height: 180px; padding: 16px; }
+    .project-1 > * { padding: 0 16px; }
+    .project-1 > .project-number { padding-top: 16px; }
+    .project-desc { padding: 0 16px; font-size: 13px; }
+    .project-tags { padding: 0 16px; }
 
     .see-work a { padding: 12px 16px; }
 
@@ -452,5 +490,6 @@ footer {
 }
 
 @media (max-width: 380px) {
-    .opening h1 { font-size: 34px; }
+    .opening h1 { font-size: 30px; }
+    nav .left a { font-size: 32px; }
 }
