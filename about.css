@@ -412,6 +412,10 @@ nav .right #contact:hover {
     color: #868686;
 }
 
+.exp-card--sm h2 {
+    font-size: 0.9rem;
+}
+
 /* Leadership section */
 .leadership-section {
     padding: 0 50px;
