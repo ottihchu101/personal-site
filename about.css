@@ -412,6 +412,38 @@ nav .right #contact:hover {
     color: #868686;
 }
 
+/* Company logo row */
+.company-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 2px;
+}
+
+.company-logo {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+    border-radius: 5px;
+    flex-shrink: 0;
+    background: #fff;
+    padding: 2px;
+    border: 1px solid rgba(0,0,0,0.08);
+}
+
+.company-logo-placeholder {
+    width: 28px;
+    height: 28px;
+    border-radius: 5px;
+    flex-shrink: 0;
+    background: #000;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+}
+
 .exp-card--sm h2 {
     font-size: 0.9rem;
 }
