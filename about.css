@@ -421,14 +421,12 @@ nav .right #contact:hover {
 }
 
 .company-logo {
-    width: 28px;
-    height: 28px;
+    height: 26px;
+    width: auto;
+    max-width: 80px;
     object-fit: contain;
-    border-radius: 5px;
+    border-radius: 4px;
     flex-shrink: 0;
-    background: #fff;
-    padding: 2px;
-    border: 1px solid rgba(0,0,0,0.08);
 }
 
 .company-logo-placeholder {
