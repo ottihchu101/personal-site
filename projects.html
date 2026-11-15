@@ -45,153 +45,53 @@
 
     <!-- MAIN -->
     <main>
-        <div class="opening">
-            <h1>MY SHELF</h1>
-        </div>
-
-        <div class="center-block">
-            <div class="build">
-                <div class="build-header">
-                    <h1>I Build Stuff...</h1>
-                </div>
-                <div class="build-subtitle">
-                    <h4>Open-source code, websites, experimentals</h4>
-                </div>
-                <div class="see-work">
-                    <a href="#build-projects">
-                        SEE MY WORK <i class="fa-solid fa-arrow-down"></i>
-                    </a>
+        <header class="opening">
+            <h1 class="title"><span class="mask"><span>MY</span></span><span class="mask"><span>SHELF.</span></span></h1>
+            <div class="intro">
+                <p>Things I've built and designed: AI tools, full-stack apps, and product redesigns.</p>
+                <div class="filters" id="filters" role="group" aria-label="Filter projects">
+                    <span class="pill" aria-hidden="true"></span>
+                    <button type="button" class="on" data-f="all">ALL</button>
+                    <button type="button" data-f="build">BUILD</button>
+                    <button type="button" data-f="design">DESIGN</button>
                 </div>
             </div>
+        </header>
 
-            <div class="design">
-                <div class="design-header">
-                    <h1>I Design Stuff...</h1>
-                </div>
-                <div class="design-subtitle">
-                    <h4>App redesigns, website pages, prototypes</h4>
-                </div>
-                <div class="see-work">
-                    <a href="#design-projects">
-                        SEE MY WORK <i class="fa-solid fa-arrow-down"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <div class="section-divider"></div>
-
-        <section id="build-projects">
-            <div class="all-projects">
-
-                <div class="project-1">
-                    <div class="project-snapshot">
-                        <img src="images/mentorgpt-snapshot.png" alt="Youth MentorGPT screenshot" />
-                    </div>
-                    <span class="project-number">01</span>
-                    <div class="project1-header">
-                        <h1>Youth MentorGPT</h1>
-                    </div>
-                    <p class="project-desc">A culturally aware AI mentor built for Nigerian youth, offering personalized career guidance, motivation, and real-life success stories to help users thrive despite tough socio-economic conditions.</p>
-                    <div class="project-tags">
-                        <span class="tag">ChatGPT</span>
-                        <span class="tag">Prompt Engineering</span>
-                        <span class="tag">AI</span>
-                    </div>
-                    <div class="see-work">
-                        <a href="https://chatgpt.com/g/g-68792d0e163c8191b41901113b28caec-nigerian-youth-mentor" target="_blank">
-                            View Project <i class="fa-solid fa-arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="project-1">
-                    <div class="project-snapshot">
-                        <img src="images/training-system-snapshot.png" alt="OnboardIQ screenshot" />
-                    </div>
-                    <span class="project-number">02</span>
-                    <div class="project1-header">
-                        <h1>OnboardIQ</h1>
-                    </div>
-                    <p class="project-desc">An AI-powered employee onboarding platform where admins upload company PDFs and GPT-4o-mini automatically generates quiz assessments. Employees complete quizzes with instant feedback, and admins track scores and completion in real time.</p>
-                    <div class="project-tags">
-                        <span class="tag">Next.js</span>
-                        <span class="tag">Supabase</span>
-                        <span class="tag">OpenAI</span>
-                    </div>
-                    <div class="see-work">
-                        <a href="https://github.com/ottihchu101/ai-onboarding-app" target="_blank">
-                            View Project <i class="fa-solid fa-arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="project-1">
-                    <span class="project-number">03</span>
-                    <div class="project1-header">
-                        <h1>API Data Monitor Tool</h1>
-                    </div>
-                    <p class="project-desc">A full-stack data quality monitor that automatically detects anomalies in product API feeds, uses Gemini AI to generate plain-English explanations for each issue, and visualizes results on a live React dashboard.</p>
-                    <div class="project-tags">
-                        <span class="tag">Node.js</span>
-                        <span class="tag">React</span>
-                        <span class="tag">Supabase</span>
-                        <span class="tag">Gemini AI</span>
-                    </div>
-                    <div class="see-work">
-                        <a href="https://github.com/ottihchu101/data-monitor-alert-tool" target="_blank">
-                            View Project <i class="fa-solid fa-arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
-
-            </div>
+        <section class="list" id="list">
+            <a class="row reveal" data-type="build" data-img="images/mentorgpt-snapshot.png" href="https://chatgpt.com/g/g-68792d0e163c8191b41901113b28caec-nigerian-youth-mentor" target="_blank">
+                <span class="num">01</span>
+                <h2>Youth MentorGPT</h2>
+                <div class="meta"><span class="tag">ChatGPT</span><span class="tag">Prompt Engineering</span><span class="tag">AI</span></div>
+                <i class="fa-solid fa-arrow-right arrow" aria-hidden="true"></i>
+                <p class="desc">A culturally aware AI mentor built for Nigerian youth, offering personalized career guidance, motivation, and real-life success stories to help users thrive despite tough socio-economic conditions.</p>
+                <div class="row-thumb"><div class="frame"><div class="frame-bar"><span></span><span></span><span></span></div><img src="images/mentorgpt-snapshot.png" alt="Youth MentorGPT screenshot" loading="lazy" /></div></div>
+            </a>
+            <a class="row reveal" data-type="build" data-img="images/training-system-snapshot.png" href="https://github.com/ottihchu101/ai-onboarding-app" target="_blank">
+                <span class="num">02</span>
+                <h2>OnboardIQ</h2>
+                <div class="meta"><span class="tag">Next.js</span><span class="tag">Supabase</span><span class="tag">OpenAI</span></div>
+                <i class="fa-solid fa-arrow-right arrow" aria-hidden="true"></i>
+                <p class="desc">An AI-powered employee onboarding platform where admins upload company PDFs and GPT-4o-mini automatically generates quiz assessments. Employees complete quizzes with instant feedback, and admins track scores and completion in real time.</p>
+                <div class="row-thumb"><div class="frame"><div class="frame-bar"><span></span><span></span><span></span></div><img src="images/training-system-snapshot.png" alt="OnboardIQ screenshot" loading="lazy" /></div></div>
+            </a>
+            <a class="row reveal" data-type="build" href="https://github.com/ottihchu101/data-monitor-alert-tool" target="_blank">
+                <span class="num">03</span>
+                <h2>API Data Monitor Tool</h2>
+                <div class="meta"><span class="tag">Node.js</span><span class="tag">React</span><span class="tag">Supabase</span><span class="tag">Gemini AI</span></div>
+                <i class="fa-solid fa-arrow-right arrow" aria-hidden="true"></i>
+                <p class="desc">A full-stack data quality monitor that automatically detects anomalies in product API feeds, uses Gemini AI to generate plain-English explanations for each issue, and visualizes results on a live React dashboard.</p>
+            </a>
+            <a class="row reveal" data-type="design" href="https://www.notion.so/Dooley-Dining-App-23e083ea32de80bb9299eb1e47297b37?source=copy_link" target="_blank">
+                <span class="num">04</span>
+                <h2>Campus Dining App</h2>
+                <div class="meta"><span class="tag">Figma</span><span class="tag">UX Research</span><span class="tag">Mobile</span></div>
+                <i class="fa-solid fa-arrow-right arrow" aria-hidden="true"></i>
+                <p class="desc">A centralized mobile dining solution for students, designed to streamline meal management, campus dining info, and balance tracking.</p>
+            </a>
         </section>
 
-        <div class="section-divider"></div>
-
-        <section id="design-projects">
-            <div class="all-projects">
-
-                <div class="project-1">
-                    <span class="project-number">04</span>
-                    <div class="project1-header">
-                        <h1>Campus Dining App | Design</h1>
-                    </div>
-                    <p class="project-desc">A centralized mobile dining solution for students, designed to streamline meal management, campus dining info, and balance tracking.</p>
-                    <div class="project-tags">
-                        <span class="tag">Figma</span>
-                        <span class="tag">UX Research</span>
-                        <span class="tag">Mobile</span>
-                    </div>
-                    <div class="see-work">
-                        <a href="https://www.notion.so/Dooley-Dining-App-23e083ea32de80bb9299eb1e47297b37?source=copy_link" target="_blank">
-                            View Project <i class="fa-solid fa-arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="project-1">
-                    <span class="project-number">05</span>
-                    <div class="project1-header">
-                        <h1>Personal Website | Design</h1>
-                    </div>
-                    <p class="project-desc">Designed the full layout and flow of my personal website in Figma before development. Prioritized clean typography and smooth interactions. The prototype guided the final build.</p>
-                    <div class="project-tags">
-                        <span class="tag">Figma</span>
-                        <span class="tag">HTML/CSS</span>
-                        <span class="tag">Prototyping</span>
-                    </div>
-                    <div class="see-work">
-                        <a href="https://www.notion.so/Personal-Website-24d083ea32de80a59e52e82ce4306eb9?source=copy_link" target="_blank">
-                            View Project <i class="fa-solid fa-arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
+        <div class="preview" id="preview" aria-hidden="true"><div class="frame"><div class="frame-bar"><span></span><span></span><span></span></div><img alt="" /></div></div>
     </main>
 
     <footer>
@@ -212,5 +112,6 @@
     </footer>
 
     <script src="main.js"></script>
+    <script src="projects.js"></script>
 </body>
 </html>
