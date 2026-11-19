@@ -16,3 +16,42 @@ tracks.forEach(t => {
 };
 addEventListener('scroll', onScroll, { passive: true });
 onScroll();
+
+// ---- extra motion ----
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const fine = matchMedia('(hover: hover)').matches;
+
+// photo tilts toward the cursor, with a light sheen following it
+const pic = document.getElementById('pic');
+if (pic && fine && !reduce) {
+    const ring = pic.querySelector('.ring');
+    pic.addEventListener('mousemove', e => {
+        const r = pic.getBoundingClientRect();
+        const x = (e.clientX - r.left) / r.width, y = (e.clientY - r.top) / r.height;
+        ring.style.setProperty('--ry', `${(x - .5) * 16}deg`);
+        ring.style.setProperty('--rx', `${(.5 - y) * 16}deg`);
+        ring.style.setProperty('--gx', `${x * 100}%`);
+        ring.style.setProperty('--gy', `${y * 100}%`);
+    });
+    pic.addEventListener('mouseleave', () => { ring.style.setProperty('--rx', '0deg'); ring.style.setProperty('--ry', '0deg'); });
+}
+
+// photo drifts slightly slower than the page while scrolling
+const headshot = document.getElementById('headshot');
+if (headshot && !reduce) {
+    addEventListener('scroll', () => {
+        if (scrollY < innerHeight) headshot.style.transform = `translateY(${scrollY * .12}px)`;
+    }, { passive: true });
+}
+
+// buttons pull slightly toward the cursor
+if (fine && !reduce) {
+    document.querySelectorAll('.btn').forEach(btn => {
+        btn.addEventListener('mousemove', e => {
+            const r = btn.getBoundingClientRect();
+            btn.classList.add('magnet');
+            btn.style.translate = `${(e.clientX - r.left - r.width / 2) * .2}px ${(e.clientY - r.top - r.height / 2) * .3}px`;
+        });
+        btn.addEventListener('mouseleave', () => { btn.style.translate = ''; });
+    });
+}

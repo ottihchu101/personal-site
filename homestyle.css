@@ -49,6 +49,19 @@ footer .links a:hover, footer .social a:hover { opacity: .5; }
 footer .social { display: flex; gap: 16px; font-size: 18px; }
 footer .copy { width: 100%; text-align: center; font: 11px 'Poppins'; color: var(--muted); }
 
+/* EXTRA MOTION */
+/* faint dot grid that appears around the cursor (home.js sets --mx/--my) */
+body::before { content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 0;
+    background-image: radial-gradient(rgba(0,0,0,.18) 1px, transparent 1px); background-size: 22px 22px;
+    -webkit-mask-image: radial-gradient(260px circle at var(--mx, -500px) var(--my, -500px), #000, transparent 70%);
+            mask-image: radial-gradient(260px circle at var(--mx, -500px) var(--my, -500px), #000, transparent 70%); }
+nav, main, footer { position: relative; z-index: 1; }
+/* each letter of the name lifts on hover */
+.name h1 .ch { display: inline-block; transition: translate .35s cubic-bezier(.3,1.6,.5,1), opacity .5s, transform .5s cubic-bezier(.2,.8,.2,1), filter .5s; }
+.name h1 .ch:hover { translate: 0 -.12em; }
+/* buttons pull slightly toward the cursor */
+.btn.magnet { transition: color .35s, translate .25s ease-out, opacity .6s, transform .6s; }
+
 @keyframes in { to { opacity: 1; transform: none; } }
 
 @media (max-width: 600px) {
