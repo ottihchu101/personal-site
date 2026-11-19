@@ -105,6 +105,8 @@ nav .btn { font-size: 12px; padding: 10px; }
 .card h3 { font-size: 1.15rem; font-weight: 600; transition: opacity .2s; }
 .card a:hover h3 { opacity: .55; }
 .card h4 { font-size: .95rem; font-weight: 400; font-style: italic; color: #555; margin-top: 6px; }
+.loc { display: inline-flex; align-items: center; gap: 6px; font-size: .8rem; color: var(--muted); margin-top: 8px; }
+.loc i { font-size: .75rem; }
 
 /* FOOTER */
 footer { border-top: 1px solid var(--line); padding: 28px 40px; margin-top: 100px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; font: 12px 'Michroma'; }
