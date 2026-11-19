@@ -38,8 +38,9 @@ if (filters) {
         b.setAttribute('aria-pressed', b === btn);
       });
       movePill(btn);
-      rows.forEach(row => {
-        row.classList.toggle('hide', btn.dataset.f !== 'all' && row.dataset.type !== btn.dataset.f);
+      // rows and their section labels share data-type
+      document.querySelectorAll('#list [data-type]').forEach(el => {
+        el.classList.toggle('hide', btn.dataset.f !== 'all' && el.dataset.type !== btn.dataset.f);
       });
     });
   });

@@ -314,6 +314,46 @@ main {
     transform: rotate(0);
 }
 
+/* section labels inside the list ("Built", "Prototypes") */
+.group-label {
+    font: 11px 'Michroma';
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: white;
+    padding: 56px 0 16px;
+}
+
+.group-label:first-child {
+    padding-top: 16px;
+}
+
+.group-label span {
+    color: #8a8a8a;
+    letter-spacing: 2px;
+}
+
+.group-label.hide {
+    display: none;
+}
+
+/* "Coming soon" label in place of the arrow */
+.row .soon-label {
+    justify-self: end;
+    font: 9px 'Michroma';
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    color: black;
+    background: white;
+    border-radius: 20px;
+    padding: 5px 10px;
+}
+
+.row.soon {
+    cursor: default;
+    grid-template-columns: 60px 1fr auto auto;
+}
+
 /* dim the other rows while one is hovered */
 .list:hover .row:not(:hover) {
     opacity: .35;
@@ -523,6 +563,8 @@ footer {
     .row { grid-template-columns: 44px 1fr 32px; }
     .row .meta { grid-column: 2 / 3; grid-row: 2; justify-content: flex-start; margin-top: 12px; }
     .row .arrow { grid-column: 3; grid-row: 1; }
+    .row.soon { grid-template-columns: 44px 1fr auto; }
+    .row .soon-label { grid-column: 3; grid-row: 1; }
     .row .desc { grid-column: 2 / -1; }
 }
 
@@ -555,6 +597,11 @@ footer {
     .row .num { font-size: 10px; }
     .row h2 { font-size: 22px; }
     .row .arrow { font-size: 15px; }
+    /* "Coming soon" sits under the title so long titles don't push it off screen */
+    .row.soon { grid-template-columns: 30px 1fr; }
+    .row .soon-label { grid-column: 2; grid-row: 2; justify-self: start; margin-top: 10px; }
+    .row.soon .meta { grid-row: 3; }
+    .filters { font-size: 10px; letter-spacing: .5px; }
     .row .desc { font-size: 13px; }
     .row-thumb { margin-top: 16px; }
 

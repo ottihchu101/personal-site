@@ -48,17 +48,18 @@
         <header class="opening">
             <h1 class="title"><span class="mask"><span>MY</span></span><span class="mask"><span>SHELF.</span></span></h1>
             <div class="intro">
-                <p>Things I've built and designed: AI tools, full-stack apps, and product redesigns.</p>
+                <p>Things I've built: AI tools, full-stack apps, and small prototypes for emerging markets.</p>
                 <div class="filters" id="filters" role="group" aria-label="Filter projects">
                     <span class="pill" aria-hidden="true"></span>
                     <button type="button" class="on" data-f="all">ALL</button>
-                    <button type="button" data-f="build">BUILD</button>
-                    <button type="button" data-f="design">DESIGN</button>
+                    <button type="button" data-f="build">BUILT</button>
+                    <button type="button" data-f="prototype">PROTOTYPES</button>
                 </div>
             </div>
         </header>
 
         <section class="list" id="list">
+            <div class="group-label" data-type="build">Built</div>
             <a class="row reveal" data-type="build" data-img="images/mentorgpt-snapshot.png" href="https://chatgpt.com/g/g-68792d0e163c8191b41901113b28caec-nigerian-youth-mentor" target="_blank">
                 <span class="num">01</span>
                 <h2>Youth MentorGPT</h2>
@@ -82,13 +83,21 @@
                 <i class="fa-solid fa-arrow-right arrow" aria-hidden="true"></i>
                 <p class="desc">A full-stack data quality monitor that automatically detects anomalies in product API feeds, uses Gemini AI to generate plain-English explanations for each issue, and visualizes results on a live React dashboard.</p>
             </a>
-            <a class="row reveal" data-type="design" href="https://www.notion.so/Dooley-Dining-App-23e083ea32de80bb9299eb1e47297b37?source=copy_link" target="_blank">
+            <div class="row reveal soon" data-type="build">
                 <span class="num">04</span>
-                <h2>Campus Dining App</h2>
-                <div class="meta"><span class="tag">Figma</span><span class="tag">UX Research</span><span class="tag">Mobile</span></div>
-                <i class="fa-solid fa-arrow-right arrow" aria-hidden="true"></i>
-                <p class="desc">A centralized mobile dining solution for students, designed to streamline meal management, campus dining info, and balance tracking.</p>
-            </a>
+                <h2>FoundYou</h2>
+                <div class="meta"><span class="tag">React</span><span class="tag">TypeScript</span><span class="tag">AI Agent</span></div>
+                <span class="soon-label">Coming soon</span>
+                <p class="desc">An AI-powered campus lost and found. Students describe what they lost to an AI agent that searches everything finders have reported, and finders just snap a photo: the app identifies the item and files the report for them.</p>
+            </div>
+            <div class="group-label" data-type="prototype">Prototypes <span>· Tools for emerging markets</span></div>
+            <div class="row reveal soon" data-type="prototype">
+                <span class="num">05</span>
+                <h2>Household Manager</h2>
+                <div class="meta"><span class="tag">Mobile</span><span class="tag">Fintech</span></div>
+                <span class="soon-label">Coming soon</span>
+                <p class="desc">A home management app for African households: track staff salaries and advances, prepaid electricity and bills, and generator costs in one place, so running a home feels less like juggling a small business.</p>
+            </div>
         </section>
 
         <div class="preview" id="preview" aria-hidden="true"><div class="frame"><div class="frame-bar"><span></span><span></span><span></span></div><img alt="" /></div></div>
